@@ -8,14 +8,14 @@ const getJson = async (URL) => {
     ).value;
     // get topic
     const topic = document.querySelector('select[name="topic"]').value;
-    console.log(diff, topic);
+    // console.log(diff, topic);
 
     // TODO: ADD API HERE
     const ENDPOINT = `https://leetcode-question-picker.herokuapp.com/api/v1/ques?topic=${topic}&difficulty=${diff}`;
     const data = await fetch(ENDPOINT)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data.data);
+            // console.log(data.data);
             const { title, acRate, titleSlug, difficulty } = data.data;
 
             document.getElementById('title').innerHTML = `${title}`;
